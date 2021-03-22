@@ -1,4 +1,4 @@
-// GENERATED AUTOMATICALLY FROM 'Assets/Src/Characters/MC/Input Controls/McControls.inputactions'
+// GENERATED AUTOMATICALLY FROM 'Assets/Scripts/Characters/MC/Input Controls/McControls.inputactions'
 
 using System;
 using System.Collections;
@@ -16,29 +16,29 @@ public class @McControls : IInputActionCollection, IDisposable
     ""maps"": [
         {
             ""name"": ""MC"",
-            ""id"": ""aa45079b-b240-4338-b3ea-a050da0d501f"",
+            ""id"": ""5021358d-6517-4110-a4a8-bd7001c3530e"",
             ""actions"": [
                 {
                     ""name"": ""Move"",
                     ""type"": ""Button"",
-                    ""id"": ""bfc6f5cd-cb8d-42a6-9778-9b782f5c707d"",
+                    ""id"": ""7aee639e-6018-4b6e-8d22-da68f6709234"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": ""Hold""
+                    ""interactions"": ""Hold(duration=0.1,pressPoint=0.1)""
                 },
                 {
-                    ""name"": ""Ability"",
+                    ""name"": ""Jump"",
                     ""type"": ""Button"",
-                    ""id"": ""7a4348b7-4121-4cd3-9237-ecbb0db5e06f"",
+                    ""id"": ""bda597ae-8b9a-4435-9981-7d535162db3b"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """"
+                    ""interactions"": ""Hold(duration=0.1,pressPoint=0.1)""
                 }
             ],
             ""bindings"": [
                 {
                     ""name"": ""WASD"",
-                    ""id"": ""dc25fd41-b79c-4619-a65b-6409eb25277e"",
+                    ""id"": ""fd7841df-b54c-4b94-806c-db2ce3cd4bc7"",
                     ""path"": ""1DAxis"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -49,29 +49,29 @@ public class @McControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""negative"",
-                    ""id"": ""f2880163-18b2-4853-82a4-77d61ccf14ba"",
+                    ""id"": ""b5483e2a-5c27-4ed8-a782-8fe8c566522d"",
                     ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard and Mouse"",
+                    ""groups"": ""Keyboard and mouse"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": ""positive"",
-                    ""id"": ""80e6c3ee-f050-4ff7-8328-ae4fc0f60641"",
+                    ""id"": ""1513eb51-20ab-4a98-8996-978bc11d1127"",
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard and Mouse"",
+                    ""groups"": ""Keyboard and mouse"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": ""Arrows"",
-                    ""id"": ""1fddc5dc-ec0b-4539-bc77-b04f9804f372"",
+                    ""id"": ""eafb19e4-e9b4-40f7-9988-911794051981"",
                     ""path"": ""1DAxis"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -82,110 +82,78 @@ public class @McControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""negative"",
-                    ""id"": ""5d149833-50a4-4676-90b3-91599bdbf4dc"",
+                    ""id"": ""f3c830f4-29e0-4b7e-bca7-cfcc4a1e29bb"",
                     ""path"": ""<Keyboard>/leftArrow"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard and Mouse"",
+                    ""groups"": ""Keyboard and mouse"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": ""positive"",
-                    ""id"": ""d3585f2d-952e-47ff-8038-ff6046e13518"",
+                    ""id"": ""12c31a61-0c60-446c-b916-28f520a0e718"",
                     ""path"": ""<Keyboard>/rightArrow"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard and Mouse"",
+                    ""groups"": ""Keyboard and mouse"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": """",
-                    ""id"": ""5528e018-f16c-4c29-9bd4-c948121565ef"",
-                    ""path"": ""<Keyboard>/space"",
-                    ""interactions"": ""Hold"",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard and Mouse"",
-                    ""action"": ""Ability"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                }
-            ]
-        },
-        {
-            ""name"": ""CharacterSelection"",
-            ""id"": ""6f946323-c321-4004-96f8-8a9ff46e7224"",
-            ""actions"": [
-                {
-                    ""name"": ""SwitchCharacter"",
-                    ""type"": ""Button"",
-                    ""id"": ""16fe8b71-84c5-466b-8fcf-279b04d35453"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                }
-            ],
-            ""bindings"": [
-                {
-                    ""name"": ""UpAndDown"",
-                    ""id"": ""088f21cc-62bb-4cbd-bd15-aef7dbc2acf5"",
+                    ""name"": ""PS4 dualshock"",
+                    ""id"": ""bc46ec2a-e4fc-44cc-9192-d28298c31772"",
                     ""path"": ""1DAxis"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""SwitchCharacter"",
+                    ""action"": ""Move"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": ""negative"",
-                    ""id"": ""80b9de7e-339c-4d8a-bd39-7377ded548ff"",
-                    ""path"": ""<Keyboard>/q"",
+                    ""id"": ""3754025e-af2b-49f7-b1db-9436c1ee7e7f"",
+                    ""path"": ""<DualShockGamepad>/leftStick/left"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard and Mouse"",
-                    ""action"": ""SwitchCharacter"",
+                    ""groups"": ""PS4 dualshock"",
+                    ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": ""positive"",
-                    ""id"": ""258eba47-c1be-494c-97be-7e16909682ea"",
-                    ""path"": ""<Keyboard>/e"",
+                    ""id"": ""909da289-dfa0-41d9-80b7-4b9dec4437be"",
+                    ""path"": ""<DualShockGamepad>/leftStick/right"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard and Mouse"",
-                    ""action"": ""SwitchCharacter"",
+                    ""groups"": ""PS4 dualshock"",
+                    ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
-                }
-            ]
-        },
-        {
-            ""name"": ""Menu"",
-            ""id"": ""9d984b68-31d7-45bb-8384-72af094a6b66"",
-            ""actions"": [
-                {
-                    ""name"": ""RetryLevel"",
-                    ""type"": ""Button"",
-                    ""id"": ""a865cd96-113d-4967-84db-f380c19df230"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                }
-            ],
-            ""bindings"": [
+                },
                 {
                     ""name"": """",
-                    ""id"": ""53bf0f6d-f557-4af0-94ee-f6b031e9dbf7"",
-                    ""path"": ""<Keyboard>/r"",
+                    ""id"": ""22b2db32-a99c-4db3-87c2-6ea5f93c5eb2"",
+                    ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard and Mouse"",
-                    ""action"": ""RetryLevel"",
+                    ""groups"": ""Keyboard and mouse"",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b1f6ba59-8094-45ed-afcb-bd005b9c6950"",
+                    ""path"": ""<DualShockGamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PS4 dualshock"",
+                    ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -194,8 +162,8 @@ public class @McControls : IInputActionCollection, IDisposable
     ],
     ""controlSchemes"": [
         {
-            ""name"": ""Keyboard and Mouse"",
-            ""bindingGroup"": ""Keyboard and Mouse"",
+            ""name"": ""Keyboard and mouse"",
+            ""bindingGroup"": ""Keyboard and mouse"",
             ""devices"": [
                 {
                     ""devicePath"": ""<Keyboard>"",
@@ -208,19 +176,24 @@ public class @McControls : IInputActionCollection, IDisposable
                     ""isOR"": false
                 }
             ]
+        },
+        {
+            ""name"": ""PS4 dualshock"",
+            ""bindingGroup"": ""PS4 dualshock"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<DualShockGamepad>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
         }
     ]
 }");
         // MC
         m_MC = asset.FindActionMap("MC", throwIfNotFound: true);
         m_MC_Move = m_MC.FindAction("Move", throwIfNotFound: true);
-        m_MC_Ability = m_MC.FindAction("Ability", throwIfNotFound: true);
-        // CharacterSelection
-        m_CharacterSelection = asset.FindActionMap("CharacterSelection", throwIfNotFound: true);
-        m_CharacterSelection_SwitchCharacter = m_CharacterSelection.FindAction("SwitchCharacter", throwIfNotFound: true);
-        // Menu
-        m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
-        m_Menu_RetryLevel = m_Menu.FindAction("RetryLevel", throwIfNotFound: true);
+        m_MC_Jump = m_MC.FindAction("Jump", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -271,13 +244,13 @@ public class @McControls : IInputActionCollection, IDisposable
     private readonly InputActionMap m_MC;
     private IMCActions m_MCActionsCallbackInterface;
     private readonly InputAction m_MC_Move;
-    private readonly InputAction m_MC_Ability;
+    private readonly InputAction m_MC_Jump;
     public struct MCActions
     {
         private @McControls m_Wrapper;
         public MCActions(@McControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_MC_Move;
-        public InputAction @Ability => m_Wrapper.m_MC_Ability;
+        public InputAction @Jump => m_Wrapper.m_MC_Jump;
         public InputActionMap Get() { return m_Wrapper.m_MC; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -290,9 +263,9 @@ public class @McControls : IInputActionCollection, IDisposable
                 @Move.started -= m_Wrapper.m_MCActionsCallbackInterface.OnMove;
                 @Move.performed -= m_Wrapper.m_MCActionsCallbackInterface.OnMove;
                 @Move.canceled -= m_Wrapper.m_MCActionsCallbackInterface.OnMove;
-                @Ability.started -= m_Wrapper.m_MCActionsCallbackInterface.OnAbility;
-                @Ability.performed -= m_Wrapper.m_MCActionsCallbackInterface.OnAbility;
-                @Ability.canceled -= m_Wrapper.m_MCActionsCallbackInterface.OnAbility;
+                @Jump.started -= m_Wrapper.m_MCActionsCallbackInterface.OnJump;
+                @Jump.performed -= m_Wrapper.m_MCActionsCallbackInterface.OnJump;
+                @Jump.canceled -= m_Wrapper.m_MCActionsCallbackInterface.OnJump;
             }
             m_Wrapper.m_MCActionsCallbackInterface = instance;
             if (instance != null)
@@ -300,99 +273,34 @@ public class @McControls : IInputActionCollection, IDisposable
                 @Move.started += instance.OnMove;
                 @Move.performed += instance.OnMove;
                 @Move.canceled += instance.OnMove;
-                @Ability.started += instance.OnAbility;
-                @Ability.performed += instance.OnAbility;
-                @Ability.canceled += instance.OnAbility;
+                @Jump.started += instance.OnJump;
+                @Jump.performed += instance.OnJump;
+                @Jump.canceled += instance.OnJump;
             }
         }
     }
     public MCActions @MC => new MCActions(this);
-
-    // CharacterSelection
-    private readonly InputActionMap m_CharacterSelection;
-    private ICharacterSelectionActions m_CharacterSelectionActionsCallbackInterface;
-    private readonly InputAction m_CharacterSelection_SwitchCharacter;
-    public struct CharacterSelectionActions
-    {
-        private @McControls m_Wrapper;
-        public CharacterSelectionActions(@McControls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @SwitchCharacter => m_Wrapper.m_CharacterSelection_SwitchCharacter;
-        public InputActionMap Get() { return m_Wrapper.m_CharacterSelection; }
-        public void Enable() { Get().Enable(); }
-        public void Disable() { Get().Disable(); }
-        public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(CharacterSelectionActions set) { return set.Get(); }
-        public void SetCallbacks(ICharacterSelectionActions instance)
-        {
-            if (m_Wrapper.m_CharacterSelectionActionsCallbackInterface != null)
-            {
-                @SwitchCharacter.started -= m_Wrapper.m_CharacterSelectionActionsCallbackInterface.OnSwitchCharacter;
-                @SwitchCharacter.performed -= m_Wrapper.m_CharacterSelectionActionsCallbackInterface.OnSwitchCharacter;
-                @SwitchCharacter.canceled -= m_Wrapper.m_CharacterSelectionActionsCallbackInterface.OnSwitchCharacter;
-            }
-            m_Wrapper.m_CharacterSelectionActionsCallbackInterface = instance;
-            if (instance != null)
-            {
-                @SwitchCharacter.started += instance.OnSwitchCharacter;
-                @SwitchCharacter.performed += instance.OnSwitchCharacter;
-                @SwitchCharacter.canceled += instance.OnSwitchCharacter;
-            }
-        }
-    }
-    public CharacterSelectionActions @CharacterSelection => new CharacterSelectionActions(this);
-
-    // Menu
-    private readonly InputActionMap m_Menu;
-    private IMenuActions m_MenuActionsCallbackInterface;
-    private readonly InputAction m_Menu_RetryLevel;
-    public struct MenuActions
-    {
-        private @McControls m_Wrapper;
-        public MenuActions(@McControls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @RetryLevel => m_Wrapper.m_Menu_RetryLevel;
-        public InputActionMap Get() { return m_Wrapper.m_Menu; }
-        public void Enable() { Get().Enable(); }
-        public void Disable() { Get().Disable(); }
-        public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(MenuActions set) { return set.Get(); }
-        public void SetCallbacks(IMenuActions instance)
-        {
-            if (m_Wrapper.m_MenuActionsCallbackInterface != null)
-            {
-                @RetryLevel.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnRetryLevel;
-                @RetryLevel.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnRetryLevel;
-                @RetryLevel.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnRetryLevel;
-            }
-            m_Wrapper.m_MenuActionsCallbackInterface = instance;
-            if (instance != null)
-            {
-                @RetryLevel.started += instance.OnRetryLevel;
-                @RetryLevel.performed += instance.OnRetryLevel;
-                @RetryLevel.canceled += instance.OnRetryLevel;
-            }
-        }
-    }
-    public MenuActions @Menu => new MenuActions(this);
-    private int m_KeyboardandMouseSchemeIndex = -1;
-    public InputControlScheme KeyboardandMouseScheme
+    private int m_KeyboardandmouseSchemeIndex = -1;
+    public InputControlScheme KeyboardandmouseScheme
     {
         get
         {
-            if (m_KeyboardandMouseSchemeIndex == -1) m_KeyboardandMouseSchemeIndex = asset.FindControlSchemeIndex("Keyboard and Mouse");
-            return asset.controlSchemes[m_KeyboardandMouseSchemeIndex];
+            if (m_KeyboardandmouseSchemeIndex == -1) m_KeyboardandmouseSchemeIndex = asset.FindControlSchemeIndex("Keyboard and mouse");
+            return asset.controlSchemes[m_KeyboardandmouseSchemeIndex];
+        }
+    }
+    private int m_PS4dualshockSchemeIndex = -1;
+    public InputControlScheme PS4dualshockScheme
+    {
+        get
+        {
+            if (m_PS4dualshockSchemeIndex == -1) m_PS4dualshockSchemeIndex = asset.FindControlSchemeIndex("PS4 dualshock");
+            return asset.controlSchemes[m_PS4dualshockSchemeIndex];
         }
     }
     public interface IMCActions
     {
         void OnMove(InputAction.CallbackContext context);
-        void OnAbility(InputAction.CallbackContext context);
-    }
-    public interface ICharacterSelectionActions
-    {
-        void OnSwitchCharacter(InputAction.CallbackContext context);
-    }
-    public interface IMenuActions
-    {
-        void OnRetryLevel(InputAction.CallbackContext context);
+        void OnJump(InputAction.CallbackContext context);
     }
 }
