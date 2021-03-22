@@ -28,95 +28,14 @@ public class CharacterController2D : MonoBehaviour
     private Rigidbody2D m_Rigidbody2D;
     private bool m_FacingRight = true;  // For determining which way the player is currently facing.
     private Vector3 m_Velocity = Vector3.zero;
-
-    [Header("Events")]
-    [Space]
-
-    public UnityEvent OnLandEvent;
-
-    [System.Serializable]
-    public class BoolEvent : UnityEvent<bool> { }
-
-    public BoolEvent OnCrouchEvent;
-    private bool m_wasCrouching = false;
-    private bool m_blocking = false;
-
     public bool getFacingRight()
     {
         return m_FacingRight;
     }
 
-    public bool IsBlocking(bool facingRight)
-    {
-        //Debug.Log("blocking: " + m_blocking + " fire ball Facing right: " + facingRight + " Character facing right: " + m_FacingRight);
-
-        bool blocking = false;
-
-        if (m_blocking)
-        {
-            if ((facingRight && !m_FacingRight) || (!facingRight && m_FacingRight))
-            {
-                blocking = true;
-            }
-        }
-
-        return blocking;
-    }
-
-    public void AttemptSwordAttack()
-    {
-        mcAnimator.AnimateAttack();
-    }
-
-    public void performSwordAttack()
-    {
-        Collider2D[] enemies = Physics2D.OverlapCircleAll(attackPoint.position, swordAttackRange, enemyLayers);
-        foreach (Collider2D enemy in enemies)
-        {
-            CharacterController2D enemyController = enemy.GetComponent<CharacterController2D>();
-            if (!enemyController.IsBlocking(m_FacingRight))
-            {
-                HealthController healthController = enemy.GetComponent<HealthController>();
-                healthController.TakeDamage(m_swordAttackDmg);
-            }
-        }
-    }
-
     public void AttemptCast()
     {
         mcAnimator.AnimateCast();
-    }
-
-    public void PerformCastAttack()
-    {
-        GameObject fireBallObj = Instantiate(fireBallPreFab, castPoint.position, castPoint.rotation);
-        FireBall fireBall = fireBallObj.GetComponent<FireBall>();
-        fireBall.setEnemyLayers(enemyLayers);
-        fireBall.setFriendlyLayers(friendlyLayers);
-        fireBall.setFacingRight(m_FacingRight);
-    }
-
-    public void PerformCastAttackDamage(LayerMask castCharacterenemyLayer, bool facingRight)
-    {
-        if (castCharacterenemyLayer == friendlyLayers && !this.IsBlocking(facingRight))
-        {
-            healthController.TakeDamage(m_castAttackDmg);
-        }
-    }
-
-    public void AttemptBlock()
-    {
-        mcAnimator.AnimateBlock();
-    }
-
-    public void PerformBlock()
-    {
-        m_blocking = true;
-    }
-
-    public void CancelBlock()
-    {
-        m_blocking = false;
     }
 
     public void AttemptJump()
@@ -146,35 +65,6 @@ public class CharacterController2D : MonoBehaviour
         if (m_Grounded || m_AirControl)
         {
 
-            // If crouching
-            if (crouch)
-            {
-                if (!m_wasCrouching)
-                {
-                    m_wasCrouching = true;
-                    OnCrouchEvent.Invoke(true);
-                }
-
-                // Reduce the speed by the crouchSpeed multiplier
-                move *= m_CrouchSpeed;
-
-                // Disable one of the colliders when crouching
-                if (m_CrouchDisableCollider != null)
-                    m_CrouchDisableCollider.enabled = false;
-            }
-            else
-            {
-                // Enable the collider when not crouching
-                if (m_CrouchDisableCollider != null)
-                    m_CrouchDisableCollider.enabled = true;
-
-                if (m_wasCrouching)
-                {
-                    m_wasCrouching = false;
-                    OnCrouchEvent.Invoke(false);
-                }
-            }
-
             // Move the character by finding the target velocity
             Vector3 targetVelocity = new Vector2(move * 10f, m_Rigidbody2D.velocity.y);
             // And then smoothing it out and applying it to the character
@@ -200,19 +90,12 @@ public class CharacterController2D : MonoBehaviour
     {
         // Switch the way the player is labelled as facing.
         m_FacingRight = !m_FacingRight;
-
         transform.Rotate(0f, 180f, 0f);
     }
 
     private void Awake()
     {
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
-
-        if (OnLandEvent == null)
-            OnLandEvent = new UnityEvent();
-
-        if (OnCrouchEvent == null)
-            OnCrouchEvent = new BoolEvent();
 
         if (transform.localScale.x == -1)
         {
@@ -233,8 +116,6 @@ public class CharacterController2D : MonoBehaviour
             if (colliders[i].gameObject != gameObject)
             {
                 m_Grounded = true;
-                if (!wasGrounded)
-                    OnLandEvent.Invoke();
             }
         }
     }
