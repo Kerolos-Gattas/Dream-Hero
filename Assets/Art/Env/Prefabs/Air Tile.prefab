@@ -9,12 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6407791457560174842}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Air Tile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &6407791457560174842
 Transform:
@@ -43,7 +43,8 @@ GameObject:
   m_Component:
   - component: {fileID: 483145871946529382}
   - component: {fileID: 6918700549110637556}
-  m_Layer: 0
+  - component: {fileID: 7436914777394308398}
+  m_Layer: 8
   m_Name: tileset-dungeon_1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,6 +116,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!68 &7436914777394308398
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584067362860005274}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -1.570725, y: 0.5073843}
+  - {x: 1.5896802, y: 0.5073843}
 --- !u!1 &2556577257182662031
 GameObject:
   m_ObjectHideFlags: 0
@@ -125,7 +144,8 @@ GameObject:
   m_Component:
   - component: {fileID: 185526995914476862}
   - component: {fileID: 6502827571726719027}
-  m_Layer: 0
+  - component: {fileID: 7447432286428516495}
+  m_Layer: 8
   m_Name: tileset-dungeon_1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -197,6 +217,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!68 &7447432286428516495
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2556577257182662031}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -1.557303, y: 0.5073843}
+  - {x: 1.5734916, y: 0.5073843}
 --- !u!1 &2603741369239951918
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,7 +245,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3537319927887403969}
   - component: {fileID: 6390648442970165059}
-  m_Layer: 0
+  - component: {fileID: 8715463659850411919}
+  m_Layer: 8
   m_Name: tileset-dungeon_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -279,3 +318,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!68 &8715463659850411919
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2603741369239951918}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -1.5761895, y: 0.5073843}
+  - {x: 1.56, y: 0.5073843}
