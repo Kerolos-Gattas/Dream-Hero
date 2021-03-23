@@ -35,7 +35,7 @@ public class McInput : MonoBehaviour
 
     private void OnEnable()
     {
-        controls.MC.Move.started += context => HandleMove(context.ReadValue<Single>());
+        controls.MC.Move.performed += context => HandleMove(context.ReadValue<Single>());
         controls.MC.Move.canceled += context => HandleStop();
         controls.MC.Jump.performed += context => HandleJump();
         controls.MC.Enable();

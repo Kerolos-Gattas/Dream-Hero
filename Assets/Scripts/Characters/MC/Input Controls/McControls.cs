@@ -24,7 +24,7 @@ public class @McControls : IInputActionCollection, IDisposable
                     ""id"": ""7aee639e-6018-4b6e-8d22-da68f6709234"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": ""Hold(duration=0.1,pressPoint=0.1)""
+                    ""interactions"": """"
                 },
                 {
                     ""name"": ""Jump"",
@@ -40,7 +40,7 @@ public class @McControls : IInputActionCollection, IDisposable
                     ""name"": ""WASD"",
                     ""id"": ""fd7841df-b54c-4b94-806c-db2ce3cd4bc7"",
                     ""path"": ""1DAxis"",
-                    ""interactions"": """",
+                    ""interactions"": ""Hold(duration=0.01,pressPoint=0.01)"",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Move"",
@@ -73,7 +73,7 @@ public class @McControls : IInputActionCollection, IDisposable
                     ""name"": ""Arrows"",
                     ""id"": ""eafb19e4-e9b4-40f7-9988-911794051981"",
                     ""path"": ""1DAxis"",
-                    ""interactions"": """",
+                    ""interactions"": ""Hold(duration=0.01,pressPoint=0.01)"",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Move"",
@@ -104,7 +104,7 @@ public class @McControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""PS4 dualshock"",
-                    ""id"": ""bc46ec2a-e4fc-44cc-9192-d28298c31772"",
+                    ""id"": ""d0f51990-768c-4c1b-a998-4f321c7731c3"",
                     ""path"": ""1DAxis"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -115,22 +115,22 @@ public class @McControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""negative"",
-                    ""id"": ""3754025e-af2b-49f7-b1db-9436c1ee7e7f"",
-                    ""path"": ""<DualShockGamepad>/leftStick/left"",
+                    ""id"": ""df5f5a91-5a77-432e-9677-7faafe746442"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""PS4 dualshock"",
+                    ""groups"": ""GamePad"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": ""positive"",
-                    ""id"": ""909da289-dfa0-41d9-80b7-4b9dec4437be"",
-                    ""path"": ""<DualShockGamepad>/leftStick/right"",
+                    ""id"": ""8652d806-2598-4f59-ba4a-ca332078c9c6"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""PS4 dualshock"",
+                    ""groups"": ""GamePad"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -149,10 +149,10 @@ public class @McControls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""b1f6ba59-8094-45ed-afcb-bd005b9c6950"",
-                    ""path"": ""<DualShockGamepad>/buttonSouth"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""PS4 dualshock"",
+                    ""groups"": ""GamePad"",
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -178,11 +178,11 @@ public class @McControls : IInputActionCollection, IDisposable
             ]
         },
         {
-            ""name"": ""PS4 dualshock"",
-            ""bindingGroup"": ""PS4 dualshock"",
+            ""name"": ""GamePad"",
+            ""bindingGroup"": ""GamePad"",
             ""devices"": [
                 {
-                    ""devicePath"": ""<DualShockGamepad>"",
+                    ""devicePath"": ""<Gamepad>"",
                     ""isOptional"": false,
                     ""isOR"": false
                 }
@@ -289,13 +289,13 @@ public class @McControls : IInputActionCollection, IDisposable
             return asset.controlSchemes[m_KeyboardandmouseSchemeIndex];
         }
     }
-    private int m_PS4dualshockSchemeIndex = -1;
-    public InputControlScheme PS4dualshockScheme
+    private int m_GamePadSchemeIndex = -1;
+    public InputControlScheme GamePadScheme
     {
         get
         {
-            if (m_PS4dualshockSchemeIndex == -1) m_PS4dualshockSchemeIndex = asset.FindControlSchemeIndex("PS4 dualshock");
-            return asset.controlSchemes[m_PS4dualshockSchemeIndex];
+            if (m_GamePadSchemeIndex == -1) m_GamePadSchemeIndex = asset.FindControlSchemeIndex("GamePad");
+            return asset.controlSchemes[m_GamePadSchemeIndex];
         }
     }
     public interface IMCActions
