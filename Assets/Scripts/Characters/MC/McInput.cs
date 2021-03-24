@@ -8,6 +8,8 @@ public class McInput : MonoBehaviour
     [SerializeField] private float horizontalMove = 0f;
     private McControls controls;
 
+    //TODO add dash
+    //TODO figure out how to dash/jump through tiles
     private void Awake()
     {
         controls = new McControls();
@@ -33,11 +35,17 @@ public class McInput : MonoBehaviour
         controller.AttemptJump();
     }
 
+    private void HandleDash()
+    {
+        controller.AttemptDash();
+    }
+
     private void OnEnable()
     {
         controls.MC.Move.performed += context => HandleMove(context.ReadValue<Single>());
         controls.MC.Move.canceled += context => HandleStop();
         controls.MC.Jump.performed += context => HandleJump();
+        controls.MC.Dash.performed += context => HandleDash();
         controls.MC.Enable();
     }
 

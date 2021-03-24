@@ -33,6 +33,14 @@ public class @McControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": ""Press(pressPoint=0.1)""
+                },
+                {
+                    ""name"": ""Dash"",
+                    ""type"": ""Button"",
+                    ""id"": ""4dd0bf3e-154e-48a7-9b91-87bf039f626a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press(pressPoint=0.1)""
                 }
             ],
             ""bindings"": [
@@ -156,6 +164,28 @@ public class @McControls : IInputActionCollection, IDisposable
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9de5fdcf-fb7d-4224-9e3f-09126ffffff6"",
+                    ""path"": ""<Keyboard>/leftCtrl"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard and mouse"",
+                    ""action"": ""Dash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2b57da85-99b6-454a-bf6d-6232ac085cbf"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""GamePad"",
+                    ""action"": ""Dash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -194,6 +224,7 @@ public class @McControls : IInputActionCollection, IDisposable
         m_MC = asset.FindActionMap("MC", throwIfNotFound: true);
         m_MC_Move = m_MC.FindAction("Move", throwIfNotFound: true);
         m_MC_Jump = m_MC.FindAction("Jump", throwIfNotFound: true);
+        m_MC_Dash = m_MC.FindAction("Dash", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -245,12 +276,14 @@ public class @McControls : IInputActionCollection, IDisposable
     private IMCActions m_MCActionsCallbackInterface;
     private readonly InputAction m_MC_Move;
     private readonly InputAction m_MC_Jump;
+    private readonly InputAction m_MC_Dash;
     public struct MCActions
     {
         private @McControls m_Wrapper;
         public MCActions(@McControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_MC_Move;
         public InputAction @Jump => m_Wrapper.m_MC_Jump;
+        public InputAction @Dash => m_Wrapper.m_MC_Dash;
         public InputActionMap Get() { return m_Wrapper.m_MC; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -266,6 +299,9 @@ public class @McControls : IInputActionCollection, IDisposable
                 @Jump.started -= m_Wrapper.m_MCActionsCallbackInterface.OnJump;
                 @Jump.performed -= m_Wrapper.m_MCActionsCallbackInterface.OnJump;
                 @Jump.canceled -= m_Wrapper.m_MCActionsCallbackInterface.OnJump;
+                @Dash.started -= m_Wrapper.m_MCActionsCallbackInterface.OnDash;
+                @Dash.performed -= m_Wrapper.m_MCActionsCallbackInterface.OnDash;
+                @Dash.canceled -= m_Wrapper.m_MCActionsCallbackInterface.OnDash;
             }
             m_Wrapper.m_MCActionsCallbackInterface = instance;
             if (instance != null)
@@ -276,6 +312,9 @@ public class @McControls : IInputActionCollection, IDisposable
                 @Jump.started += instance.OnJump;
                 @Jump.performed += instance.OnJump;
                 @Jump.canceled += instance.OnJump;
+                @Dash.started += instance.OnDash;
+                @Dash.performed += instance.OnDash;
+                @Dash.canceled += instance.OnDash;
             }
         }
     }
@@ -302,5 +341,6 @@ public class @McControls : IInputActionCollection, IDisposable
     {
         void OnMove(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
+        void OnDash(InputAction.CallbackContext context);
     }
 }

@@ -121,6 +121,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &359337952 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2848691062601703464, guid: 6c7ccc21b27f20f4e85ef35fbe78591c,
+    type: 3}
+  m_PrefabInstance: {fileID: 779130203}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &429648296 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2848691062487457220, guid: 6c7ccc21b27f20f4e85ef35fbe78591c,
+    type: 3}
+  m_PrefabInstance: {fileID: 779130203}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,6 +232,31 @@ PrefabInstance:
         type: 3}
       propertyPath: speed
       value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 2848691062901038635, guid: 6c7ccc21b27f20f4e85ef35fbe78591c,
+        type: 3}
+      propertyPath: groundCheck
+      value: 
+      objectReference: {fileID: 429648296}
+    - target: {fileID: 2848691062901038635, guid: 6c7ccc21b27f20f4e85ef35fbe78591c,
+        type: 3}
+      propertyPath: ceilingCheck
+      value: 
+      objectReference: {fileID: 359337952}
+    - target: {fileID: 2848691062901038635, guid: 6c7ccc21b27f20f4e85ef35fbe78591c,
+        type: 3}
+      propertyPath: whatIsGround.m_Bits
+      value: 768
+      objectReference: {fileID: 0}
+    - target: {fileID: 2848691062901038635, guid: 6c7ccc21b27f20f4e85ef35fbe78591c,
+        type: 3}
+      propertyPath: jumpForce
+      value: 900
+      objectReference: {fileID: 0}
+    - target: {fileID: 2848691062901038635, guid: 6c7ccc21b27f20f4e85ef35fbe78591c,
+        type: 3}
+      propertyPath: dashForce
+      value: 5000
       objectReference: {fileID: 0}
     - target: {fileID: 2848691062901038637, guid: 6c7ccc21b27f20f4e85ef35fbe78591c,
         type: 3}

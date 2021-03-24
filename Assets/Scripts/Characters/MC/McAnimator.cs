@@ -38,4 +38,9 @@ public class McAnimator : MonoBehaviour
     {
         animator.SetTrigger("Cast");
     }
+
+    public void AnimateDash()
+    {
+        animator.SetTrigger("Dash");
+    }
 }
