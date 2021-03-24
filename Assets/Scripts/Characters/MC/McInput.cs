@@ -8,7 +8,8 @@ public class McInput : MonoBehaviour
     [SerializeField] private float horizontalMove = 0f;
     private McControls controls;
 
-    //TODO add dash
+    //TODO disable infinite dash on ground
+    //TODO add dash horizontal movement
     //TODO figure out how to dash/jump through tiles
     private void Awake()
     {

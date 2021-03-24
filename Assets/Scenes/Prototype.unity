@@ -256,7 +256,7 @@ PrefabInstance:
     - target: {fileID: 2848691062901038635, guid: 6c7ccc21b27f20f4e85ef35fbe78591c,
         type: 3}
       propertyPath: dashForce
-      value: 5000
+      value: 2500
       objectReference: {fileID: 0}
     - target: {fileID: 2848691062901038637, guid: 6c7ccc21b27f20f4e85ef35fbe78591c,
         type: 3}
