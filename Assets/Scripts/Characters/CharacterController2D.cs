@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
-using UnityEngine.Events;
+using System.Collections;
 
 public class CharacterController2D : MonoBehaviour
 {
     public McAnimator mcAnimator;
     [SerializeField] private float jumpForce = 400f;                          // Amount of force added when the player jumps.
     [SerializeField] private float dashForce = 150f;
+    [SerializeField] private float dashTimer = 1f;
     [Range(0, .3f)] [SerializeField] private float movementSmoothing = .05f;  // How much to smooth out the movement
     [SerializeField] private bool airControl = true;                         // Whether or not a player can steer while jumping;
     [SerializeField] private LayerMask whatIsGround;                          // A mask determining what is ground to the character
@@ -16,7 +17,8 @@ public class CharacterController2D : MonoBehaviour
     const float groundedRadius = .2f; // Radius of the overlap circle to determine if grounded
     const float ceilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
     private bool grounded;            // Whether or not the player is grounded.
-    private bool dashUsed = false;
+    private bool canDash = true;
+    private bool dashTimerDone = false;
     private Rigidbody2D rigidb2D;
     private bool facingRight = true;  // For determining which way the player is currently facing.
     private Vector3 velocity = Vector3.zero;
@@ -44,12 +46,14 @@ public class CharacterController2D : MonoBehaviour
 
     public void AttemptDash()
     {
-        if (!dashUsed)
+        if (canDash)
         {
-            dashUsed = true;
+            canDash = false;
+            dashTimerDone = false;
             float dashDir = facingRight ? dashForce : dashForce * -1;
             rigidb2D.AddForce(new Vector2(dashDir, 0f));
             mcAnimator.AnimateDash();
+            StartCoroutine(DashTimer());
         }
     }
 
@@ -120,8 +124,14 @@ public class CharacterController2D : MonoBehaviour
             if (colliders[i].gameObject != gameObject)
             {
                 grounded = true;
-                dashUsed = false;
+                if (dashTimerDone) canDash = true;
             }
         }
+    }
+
+    private IEnumerator DashTimer()
+    {
+        yield return new WaitForSeconds(dashTimer);
+        dashTimerDone = true;
     }
 }
