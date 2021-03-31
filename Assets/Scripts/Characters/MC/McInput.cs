@@ -5,8 +5,10 @@ public class McInput : MonoBehaviour
 {
     public CharacterController2D controller;
     [SerializeField] private float speed = 40f;
-    [SerializeField] private float horizontalMove = 0f;
+    private float horizontalMove = 0f;
     private McControls controls;
+    private float dashDirX = 0;
+    private float dashDirY = 0;
 
     //TODO add dash horizontal movement
     //TODO figure out how to dash/jump through tiles
@@ -37,7 +39,13 @@ public class McInput : MonoBehaviour
 
     private void HandleDash()
     {
-        controller.AttemptDash();
+        controller.AttemptDash(this.dashDirX, this.dashDirY);
+    }
+
+    private void HandleDashDir(Vector2 dir)
+    {
+        dashDirX = dir.x;
+        dashDirY = dir.y;
     }
 
     private void OnEnable()
@@ -46,6 +54,7 @@ public class McInput : MonoBehaviour
         controls.MC.Move.canceled += context => HandleStop();
         controls.MC.Jump.performed += context => HandleJump();
         controls.MC.Dash.performed += context => HandleDash();
+        controls.MC.DashDirection.performed += context => HandleDashDir(context.ReadValue<Vector2>());
         controls.MC.Enable();
     }
 

@@ -41,6 +41,14 @@ public class @McControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": ""Press(pressPoint=0.1)""
+                },
+                {
+                    ""name"": ""DashDirection"",
+                    ""type"": ""Button"",
+                    ""id"": ""8c97d52b-be5a-4865-b21a-542570a7123f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -186,6 +194,61 @@ public class @McControls : IInputActionCollection, IDisposable
                     ""action"": ""Dash"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""DashLeftStick"",
+                    ""id"": ""06b52f98-f86d-432f-b107-5720b5155bde"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DashDirection"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""aad920a8-d28a-4c63-b6c9-64ac4ea04e5c"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""GamePad"",
+                    ""action"": ""DashDirection"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""255f10ba-2237-44b8-8dfb-d1dc2986ef77"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""GamePad"",
+                    ""action"": ""DashDirection"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""e569561d-e6c3-404a-9f97-fa2800a6502a"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""GamePad"",
+                    ""action"": ""DashDirection"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""60b4e310-6cab-4c39-b114-8fbc354c1256"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""GamePad"",
+                    ""action"": ""DashDirection"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -225,6 +288,7 @@ public class @McControls : IInputActionCollection, IDisposable
         m_MC_Move = m_MC.FindAction("Move", throwIfNotFound: true);
         m_MC_Jump = m_MC.FindAction("Jump", throwIfNotFound: true);
         m_MC_Dash = m_MC.FindAction("Dash", throwIfNotFound: true);
+        m_MC_DashDirection = m_MC.FindAction("DashDirection", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -277,6 +341,7 @@ public class @McControls : IInputActionCollection, IDisposable
     private readonly InputAction m_MC_Move;
     private readonly InputAction m_MC_Jump;
     private readonly InputAction m_MC_Dash;
+    private readonly InputAction m_MC_DashDirection;
     public struct MCActions
     {
         private @McControls m_Wrapper;
@@ -284,6 +349,7 @@ public class @McControls : IInputActionCollection, IDisposable
         public InputAction @Move => m_Wrapper.m_MC_Move;
         public InputAction @Jump => m_Wrapper.m_MC_Jump;
         public InputAction @Dash => m_Wrapper.m_MC_Dash;
+        public InputAction @DashDirection => m_Wrapper.m_MC_DashDirection;
         public InputActionMap Get() { return m_Wrapper.m_MC; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -302,6 +368,9 @@ public class @McControls : IInputActionCollection, IDisposable
                 @Dash.started -= m_Wrapper.m_MCActionsCallbackInterface.OnDash;
                 @Dash.performed -= m_Wrapper.m_MCActionsCallbackInterface.OnDash;
                 @Dash.canceled -= m_Wrapper.m_MCActionsCallbackInterface.OnDash;
+                @DashDirection.started -= m_Wrapper.m_MCActionsCallbackInterface.OnDashDirection;
+                @DashDirection.performed -= m_Wrapper.m_MCActionsCallbackInterface.OnDashDirection;
+                @DashDirection.canceled -= m_Wrapper.m_MCActionsCallbackInterface.OnDashDirection;
             }
             m_Wrapper.m_MCActionsCallbackInterface = instance;
             if (instance != null)
@@ -315,6 +384,9 @@ public class @McControls : IInputActionCollection, IDisposable
                 @Dash.started += instance.OnDash;
                 @Dash.performed += instance.OnDash;
                 @Dash.canceled += instance.OnDash;
+                @DashDirection.started += instance.OnDashDirection;
+                @DashDirection.performed += instance.OnDashDirection;
+                @DashDirection.canceled += instance.OnDashDirection;
             }
         }
     }
@@ -342,5 +414,6 @@ public class @McControls : IInputActionCollection, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
+        void OnDashDirection(InputAction.CallbackContext context);
     }
 }

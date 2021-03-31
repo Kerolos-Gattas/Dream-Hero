@@ -5,7 +5,8 @@ public class CharacterController2D : MonoBehaviour
 {
     public McAnimator mcAnimator;
     [SerializeField] private float jumpForce = 400f;                          // Amount of force added when the player jumps.
-    [SerializeField] private float dashForce = 150f;
+    [SerializeField] private float dashForceX = 2500f;
+    [SerializeField] private float dashForceY = 2000f;
     [SerializeField] private float dashTimer = 1f;
     [Range(0, .3f)] [SerializeField] private float movementSmoothing = .05f;  // How much to smooth out the movement
     [SerializeField] private bool airControl = true;                         // Whether or not a player can steer while jumping;
@@ -44,14 +45,17 @@ public class CharacterController2D : MonoBehaviour
         }
     }
 
-    public void AttemptDash()
+    public void AttemptDash(float dirX, float dirY)
     {
         if (canDash)
         {
             canDash = false;
             dashTimerDone = false;
-            float dashDir = facingRight ? dashForce : dashForce * -1;
-            rigidb2D.AddForce(new Vector2(dashDir, 0f));
+            Vector2 dashDir = new Vector2(dashForceX * dirX, dashForceY * dirY);
+            //Debug.Log(rigidb2D.velocity);
+            //Debug.Log(rigidb2D.angularVelocity);
+            //Debug.Log(dashDir);
+            rigidb2D.AddRelativeForce(dashDir);
             mcAnimator.AnimateDash();
             StartCoroutine(DashTimer());
         }
