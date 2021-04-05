@@ -51,12 +51,12 @@ public class CharacterController2D : MonoBehaviour
         {
             canDash = false;
             dashTimerDone = false;
-            Vector2 dashDir = new Vector2(dashForceX * dirX, dashForceY * dirY);
+            Vector2 dashDir = new Vector2(this.getDashForce(dirX, dashForceX), this.getDashForce(dirY, dashForceY));
             //Debug.Log(rigidb2D.velocity);
             //Debug.Log(rigidb2D.angularVelocity);
-            //Debug.Log(dashDir);
+            Debug.Log(dashDir);
             rigidb2D.AddRelativeForce(dashDir);
-            mcAnimator.AnimateDash();
+            //mcAnimator.AnimateDash();
             StartCoroutine(DashTimer());
         }
     }
@@ -137,5 +137,20 @@ public class CharacterController2D : MonoBehaviour
     {
         yield return new WaitForSeconds(dashTimer);
         dashTimerDone = true;
+    }
+
+    private float getDashForce(float dir, float force)
+    {
+        float dashForce = 0;
+
+        if (dir > 0)
+        {
+            dashForce = force;
+        }
+        else if (dir < 0)
+        {
+            dashForce = force * -1;
+        }
+        return dashForce;
     }
 }

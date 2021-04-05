@@ -10,8 +10,8 @@ public class McInput : MonoBehaviour
     private float dashDirX = 0;
     private float dashDirY = 0;
 
-    //TODO add dash horizontal movement
     //TODO figure out how to dash/jump through tiles
+    //TODO increase jump speed when faster?
     private void Awake()
     {
         controls = new McControls();
@@ -42,6 +42,7 @@ public class McInput : MonoBehaviour
         controller.AttemptDash(this.dashDirX, this.dashDirY);
     }
 
+    // BUG: Player does not move, the last dash dir is remebered and is not equal to zero
     private void HandleDashDir(Vector2 dir)
     {
         dashDirX = dir.x;
