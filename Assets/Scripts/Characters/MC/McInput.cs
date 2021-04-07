@@ -10,8 +10,6 @@ public class McInput : MonoBehaviour
     private float dashDirX = 0;
     private float dashDirY = 0;
 
-    //TODO figure out how to dash/jump through tiles
-    //TODO increase jump speed when faster?
     private void Awake()
     {
         controls = new McControls();

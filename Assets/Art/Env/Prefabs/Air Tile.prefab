@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6407791457560174842}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Air Tile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 483145871946529382}
   - component: {fileID: 6918700549110637556}
   - component: {fileID: 7436914777394308398}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: tileset-dungeon_1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -145,7 +145,7 @@ GameObject:
   - component: {fileID: 185526995914476862}
   - component: {fileID: 6502827571726719027}
   - component: {fileID: 7447432286428516495}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: tileset-dungeon_1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -246,7 +246,7 @@ GameObject:
   - component: {fileID: 3537319927887403969}
   - component: {fileID: 6390648442970165059}
   - component: {fileID: 8715463659850411919}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: tileset-dungeon_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

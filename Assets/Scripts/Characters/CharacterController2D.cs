@@ -51,7 +51,7 @@ public class CharacterController2D : MonoBehaviour
         {
             canDash = false;
             dashTimerDone = false;
-            Vector2 dashDir = new Vector2(this.getDashForce(dirX, dashForceX), this.getDashForce(dirY, dashForceY));
+            Vector2 dashDir = new Vector2(this.GetDashForce(dirX, dashForceX), this.GetDashForce(dirY, dashForceY));
             //Debug.Log(rigidb2D.velocity);
             //Debug.Log(rigidb2D.angularVelocity);
             Debug.Log(dashDir);
@@ -131,6 +131,7 @@ public class CharacterController2D : MonoBehaviour
                 if (dashTimerDone) canDash = true;
             }
         }
+        this.IgnorePlatformCollisions();
     }
 
     private IEnumerator DashTimer()
@@ -139,7 +140,7 @@ public class CharacterController2D : MonoBehaviour
         dashTimerDone = true;
     }
 
-    private float getDashForce(float dir, float force)
+    private float GetDashForce(float dir, float force)
     {
         float dashForce = 0;
 
@@ -152,5 +153,17 @@ public class CharacterController2D : MonoBehaviour
             dashForce = force * -1;
         }
         return dashForce;
+    }
+
+    private void IgnorePlatformCollisions()
+    {
+        if (this.rigidb2D.velocity.y > 0)
+        {
+            Physics2D.IgnoreLayerCollision(10, 11, true);
+        }
+        else
+        {
+            Physics2D.IgnoreLayerCollision(10, 11, false);
+        }
     }
 }
