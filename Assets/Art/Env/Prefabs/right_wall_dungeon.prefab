@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 478065418530117357}
   - component: {fileID: 5875857138977210711}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: right_wall_dungeon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 4996725333415671485}
   - component: {fileID: 4996725333415671486}
   - component: {fileID: 4996725333415671487}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: tileset-dungeon_0 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -205,7 +205,7 @@ GameObject:
   - component: {fileID: 4996725333464520596}
   - component: {fileID: 4996725333464520597}
   - component: {fileID: 4996725333464520598}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: tileset-dungeon_0 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -314,7 +314,7 @@ GameObject:
   - component: {fileID: 4996725334234606380}
   - component: {fileID: 4996725334234606381}
   - component: {fileID: 4996725334234606382}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: tileset-dungeon_0 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -423,7 +423,7 @@ GameObject:
   - component: {fileID: 4996725334313686096}
   - component: {fileID: 4996725334313686097}
   - component: {fileID: 4996725334313686098}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: tileset-dungeon_0 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
