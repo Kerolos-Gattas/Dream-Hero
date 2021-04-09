@@ -265,12 +265,12 @@ PrefabInstance:
     - target: {fileID: 2848691062901038637, guid: 6c7ccc21b27f20f4e85ef35fbe78591c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.89
+      value: 11.51
       objectReference: {fileID: 0}
     - target: {fileID: 2848691062901038637, guid: 6c7ccc21b27f20f4e85ef35fbe78591c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -16.32
+      value: 1.11
       objectReference: {fileID: 0}
     - target: {fileID: 2848691062901038637, guid: 6c7ccc21b27f20f4e85ef35fbe78591c,
         type: 3}
@@ -536,6 +536,7 @@ MonoBehaviour:
   target: {fileID: 335952145}
   speed: 800
   nextWayPointDistance: 3
+  gfx: {fileID: 473540514}
 --- !u!114 &473540509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -564,6 +565,12 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
+--- !u!4 &473540514 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2848691062901038637, guid: 6c7ccc21b27f20f4e85ef35fbe78591c,
+    type: 3}
+  m_PrefabInstance: {fileID: 238857545}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1190,7 +1197,7 @@ MonoBehaviour:
   manualDebugFloorRoof: 0
   showSearchTree: 0
   unwalkableNodeDebugSize: 0.3
-  logPathResults: 1
+  logPathResults: 0
   maxNearestNodeDistance: 100
   scanOnStartup: 1
   fullGetNearestSearch: 0
@@ -1209,7 +1216,7 @@ MonoBehaviour:
   heuristic: 2
   heuristicScale: 1
   threadCount: 1
-  maxFrameTime: 1
+  maxFrameTime: 10
   batchGraphUpdates: 0
   graphUpdateBatchingInterval: 0.2
   euclideanEmbedding:
